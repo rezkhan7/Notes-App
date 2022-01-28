@@ -7,7 +7,9 @@ import {nanoid} from "nanoid"
 import * as style from "./style.css"
 
 export default function App() {
-    const [notes, setNotes] = React.useState(JSON.parse(localStorage.getItem("notes"))||[])
+    const [notes, setNotes] = React.useState(
+       ()=> JSON.parse(localStorage.getItem("notes"))||[]
+    )
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0] && notes[0].id) || ""
     )
