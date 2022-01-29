@@ -50,7 +50,10 @@ export default function App() {
             ? { ...oldNote, body: text }
             : oldNote
     }))*/
-
+    function deleteNote(event, noteId) {
+        event.stopPropagation()
+        // code here
+    }
 
   
     function findCurrentNote() {
