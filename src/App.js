@@ -28,13 +28,31 @@ export default function App() {
     }
     
     function updateNote(text) {
-        setNotes(oldNotes => oldNotes.map(oldNote => {
-            return oldNote.id === currentNoteId
-                ? { ...oldNote, body: text }
-                : oldNote
-        }))
+        // Put the most recently-modified note at the top
+        setNotes(oldNotes => {
+            const newArray = []
+            for(let i = 0; i < oldNotes.length; i++) {
+                const oldNote = oldNotes[i]
+                if(oldNote.id === currentNoteId) {
+                    newArray.unshift({ ...oldNote, body: text })
+                } else {
+                    newArray.push(oldNote)
+                }
+            }
+            return newArray
+        })
     }
+        
     
+        //.map doesn't allow for rearranging the notes
+        /*setNotes(oldNotes => oldNotes.map(oldNote => {
+        return oldNote.id === currentNoteId
+            ? { ...oldNote, body: text }
+            : oldNote
+    }))*/
+
+
+  
     function findCurrentNote() {
         return notes.find(note => {
             return note.id === currentNoteId
