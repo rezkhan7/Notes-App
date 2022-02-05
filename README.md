@@ -6,7 +6,10 @@ In the industry, you will not be working alone so it is imperative to be able to
 ![image](nonotes.png)
 
 ### Notes are saved across browser sessions / The first line becomes the note title :
+![](saved.gif)
 
 ### Most recently edited notes are shown at the top:
+![](recent.gif)
 
 ### Users can delete notes with ease
+![](delete.gif)
